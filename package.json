@@ -1,0 +1,31 @@
+{
+  "name": "poidh-activity",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview --host 0.0.0.0",
+    "data:refresh": "python3 scripts/update-data.py",
+    "data:check": "python3 scripts/update-data.py --check",
+    "test:browser": "node scripts/check-site.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "playwright": "1.64.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.4"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

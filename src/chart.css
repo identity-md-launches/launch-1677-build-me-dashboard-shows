@@ -1,0 +1,154 @@
+.activity-chart {
+  --chart-grid: var(--color-border, #e9e7e2);
+  --chart-text: var(--color-text-secondary, #656761);
+  --chart-bar: var(--color-accent, #d4542b);
+  --chart-selection: var(--color-text, #252820);
+  width: 100%;
+  min-width: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.activity-chart__canvas {
+  width: 100%;
+  min-width: 0;
+  border-radius: 6px;
+  touch-action: pan-y;
+  cursor: crosshair;
+}
+
+.activity-chart__canvas:focus-visible {
+  outline: 2px solid var(--color-focus, #9e3519);
+  outline-offset: 4px;
+}
+
+.activity-chart__canvas svg {
+  display: block;
+  overflow: visible;
+}
+
+.activity-chart__grid {
+  stroke: var(--chart-grid);
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.activity-chart__axis {
+  fill: var(--chart-text);
+  font-family: inherit;
+  font-size: var(--text-xs, 12px);
+  font-weight: 400;
+}
+
+.activity-chart__bar {
+  fill: var(--chart-bar);
+}
+
+.activity-chart__bar.is-selected {
+  fill: var(--color-accent-hover, #a64021);
+}
+
+.activity-chart__guide {
+  stroke: var(--chart-selection);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+  opacity: 0.35;
+}
+
+.activity-chart__marker {
+  fill: var(--chart-selection);
+  stroke: var(--color-surface, #fff);
+  stroke-width: 1.5;
+}
+
+.activity-chart__empty {
+  fill: var(--chart-text);
+  font-family: inherit;
+  font-size: var(--text-xs, 12px);
+  font-weight: 400;
+}
+
+.activity-chart__inspection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding-block-start: 14px;
+  color: var(--chart-text);
+  font-size: var(--text-xs, 12px);
+  line-height: 1.5;
+}
+
+.activity-chart__selection {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.activity-chart__selection-dot {
+  align-self: center;
+  flex: 0 0 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--chart-bar);
+}
+
+.activity-chart__date,
+.activity-chart__value {
+  color: var(--chart-selection);
+}
+
+.activity-chart__value strong {
+  font-weight: 600;
+}
+
+.activity-chart__partial {
+  color: var(--chart-text);
+}
+
+.activity-chart__help {
+  margin: 0;
+  color: var(--chart-text);
+  font-size: inherit;
+}
+
+@media (max-width: 540px) {
+  .activity-chart__inspection {
+    gap: 8px;
+  }
+
+  .activity-chart__selection {
+    column-gap: 8px;
+  }
+
+  .activity-chart__help {
+    flex-basis: 100%;
+  }
+}
+
+@media (forced-colors: active) {
+  .activity-chart__bar {
+    fill: CanvasText;
+  }
+
+  .activity-chart__bar.is-selected,
+  .activity-chart__marker {
+    fill: Highlight;
+  }
+
+  .activity-chart__axis,
+  .activity-chart__empty {
+    fill: CanvasText;
+  }
+
+  .activity-chart__grid,
+  .activity-chart__guide {
+    stroke: GrayText;
+  }
+
+  .activity-chart__canvas:focus-visible {
+    outline-color: Highlight;
+  }
+}

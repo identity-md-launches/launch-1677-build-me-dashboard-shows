@@ -1,0 +1,11 @@
+# Explicit path budget: this file <= 512 bytes; ignored generated paths 0 submitted bytes.
+**/node_modules/
+**/.npm/
+**/.cache/
+**/.vite/
+**/__pycache__/
+**/*.pyc
+**/*.tsbuildinfo
+.playwright-mcp/
+test/scratch/
+# dist/ is a required deliverable and is intentionally included.
